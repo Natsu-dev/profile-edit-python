@@ -1,23 +1,26 @@
 from commands import cmd_a, cmd_c, cmd_p, cmd_r, cmd_w, cmd_f, cmd_s, cmd_d, cmd_h
+import numpy as np
 
 LINE_LMT = 1024  # 標準入力の上限bytes
 NAME_LMT = 70  # プロフの名前欄の上限bytes
 ADRS_LMT = 70  # プロフの住所欄の上限bytes
 PROF_LMT = 10000  # プロフの格納数の上限
 
+Profile_list = []
 
-class date:
+
+class Date:
     def __init__(self, year, month, day) -> None:
         self.year = year
         self.month = month
         self.day = day
 
 
-class profile:
+class Profile:
     def __init__(self, id, name, year, month, day, address, note) -> None:
         self.id = id
         self.name = name
-        self.date = date(year, month, day)
+        self.date = Date(year, month, day)
         self.address = address
         self.note = note
 
