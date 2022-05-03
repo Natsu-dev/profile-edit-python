@@ -14,7 +14,7 @@ def cmd_help():
         "     Param:\n"
         "Q (Quit)  : Close and quit the program\n"
         "     Param:\n"
-        "C (Check) : Check and show the number of profiles in memory\n"
+        "C (Count) : Count and show the number of profiles in memory\n"
         "     Param:\n"
         "P (Print) : Print profiles in memory\n"
         "     Param: 0 - Show all\n"
@@ -31,3 +31,4 @@ def cmd_help():
         "D (Delete): Delete a profile in memory\n"
         "     Param: {Profile No.}\n"
     )
+    return
