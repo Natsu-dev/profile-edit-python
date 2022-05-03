@@ -1,2 +1,2 @@
-def cmd_check():
+def cmd_count():
     print ('%C Command.')
