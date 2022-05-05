@@ -1,4 +1,4 @@
-from commands import cmd_a, cmd_c, cmd_p, cmd_r, cmd_w, cmd_f, cmd_s, cmd_d, cmd_h
+import cmd
 import class_def as cd
 import numpy as np
 
@@ -16,23 +16,26 @@ def split_command(in_val):
 # コマンド
 def switch_command(Prf_list, in_list):
     if in_list[0] == "%A":
-        cmd_a.cmd_add(Prf_list, in_list[1])
+        cmd.cmd_add(Prf_list, in_list[1])
     elif in_list[0] == "%C":
-        cmd_c.cmd_count(Prf_list, in_list[1])
-    elif in_list[0] == "%P":
-        cmd_p.cmd_print(Prf_list, in_list[1])
-    elif in_list[0] == "%R":
-        cmd_r.cmd_read(Prf_list, in_list[1])
-    elif in_list[0] == "%W":
-        cmd_w.cmd_write(Prf_list, in_list[1])
-    elif in_list[0] == "%F":
-        cmd_f.cmd_find(Prf_list, in_list[1])
-    elif in_list[0] == "%S":
-        cmd_s.cmd_sort(Prf_list, in_list[1])
+        cmd.cmd_count(Prf_list)
     elif in_list[0] == "%D":
-        cmd_d.cmd_delete(Prf_list, in_list[1])
+        cmd.cmd_delete(Prf_list, in_list[1])
+    elif in_list[0] == "%F":
+        cmd.cmd_find(Prf_list, in_list[1])
     elif in_list[0] == "%H":
-        cmd_h.cmd_help()
+        cmd.cmd_help()
+    elif in_list[0] == "%P":
+        cmd.cmd_print(Prf_list, in_list[1])
+    elif in_list[0] == "%R":
+        cmd.cmd_read(Prf_list, in_list[1])
+    elif in_list[0] == "%S":
+        cmd.cmd_sort(Prf_list, in_list[1])
+    elif in_list[0] == "%W":
+        cmd.cmd_write(Prf_list, in_list[1])
+    else:
+        print("Invalid command " + str(in_list[0]) + " .\n"
+            + "Please type '%H' to see the help-list for all commands.\n")
 
 
 def main():
