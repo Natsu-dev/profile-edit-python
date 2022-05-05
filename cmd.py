@@ -105,6 +105,7 @@ def cmd_delete(Prf_list, line):
     return True
 
 
+# TODO
 def cmd_find():
     print("%F Command.")
     return
@@ -152,16 +153,19 @@ def cmd_print(Prf_list, line):
     return
 
 
+# TODO
 def cmd_read():
     print("%R Command.")
     return
 
 
+# TODO
 def cmd_sort():
     print("%S Command.")
     return
 
 
+# TODO
 def cmd_write():
     print("%W Command.")
     return
