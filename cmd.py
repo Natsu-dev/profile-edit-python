@@ -153,10 +153,21 @@ def cmd_print(Prf_list, line):
     return
 
 
-# TODO
-def cmd_read():
-    print("%R Command.")
-    return
+def cmd_read(Prf_list, line):
+    # TODO ファイル名バリデーション
+    try:
+        with open(line) as f:
+            l = f.readlines()
+            add_count = 0
+            for p in l:
+                if add_one_profile(Prf_list, p):
+                    add_count += 1
+
+            print("Added {} profiles.".format(add_count))
+            return True
+    except FileNotFoundError as e:
+        print("Something went wrong when opening file: '" + str(line) + "'.", e)
+        return False
 
 
 # TODO
